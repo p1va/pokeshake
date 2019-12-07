@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PokeShake.Services.PokeApi.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

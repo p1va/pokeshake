@@ -14,7 +14,7 @@ namespace PokeShake.Services.PokeApi.Tests
     /// The PokeApiService integration tests class
     /// </summary>
     [Collection("PokeApiService Integration Tests")]
-    public class PokeApiIntegrationTests
+    public class PokeApiIntegrationTests : IDisposable
     {
         /// <summary>
         /// The test prefix
@@ -48,7 +48,7 @@ namespace PokeShake.Services.PokeApi.Tests
             services.AddHttpClient<IPokeApiService, HttpPokeApiService>();
 
             // Configure options for http service
-            services.Configure<HttpPokeApiServiceOptions>(options => 
+            services.Configure<HttpPokeApiServiceOptions>(options =>
             {
                 options.BaseUrl = "https://pokeapi.co";
                 options.SpeciesEndpoint = "/api/v2/pokemon-species/";
@@ -107,5 +107,66 @@ namespace PokeShake.Services.PokeApi.Tests
             exception.Should().BeOfType(typeof(HttpServiceException));
             ((HttpServiceException)exception).StatusCode.Should().Be(HttpStatusCode.NotFound, "The server should return not found");
         }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            // Dispose any test related stuff
+        }
+
+        //TODO: Test for timeout
+
+        /*
+         
+
+        Commenting this to avoid reaching the limit and having other tests failing
+
+        /// <summary>
+        /// Determines whether this instance [can get too many requests error].
+        /// </summary>
+        [Fact(DisplayName = TestPrefix + "Can get too many requests error")]
+        public async Task CanGetTooManyRequestsError()
+        {
+            // Arrange
+
+            // Declare a new services collection
+            var services = new ServiceCollection();
+
+            // Add logging
+            services.AddLogging();
+
+            // Add http client 
+            services.AddHttpClient<IPokeApiService, HttpPokeApiService>();
+
+            // Configure options for http service
+            services.Configure<HttpPokeApiServiceOptions>(options =>
+            {
+                options.BaseUrl = "https://pokeapi.co";
+                options.SpeciesEndpoint = "/api/v2/pokemon-species/";
+            });
+
+            // Build the service provider
+            var serviceProvider = services.BuildServiceProvider();
+
+            // Retrieve PokeApiService instance from the service provider
+            var pokeApiService = serviceProvider.GetRequiredService<IPokeApiService>();
+
+            // Act
+            var exception = await Record.ExceptionAsync(async () =>
+            {
+                foreach (var item in Enumerable.Repeat(1, 110))
+                {
+                    await pokeApiService.GetPokemonAsync("charizard");
+                }
+            });
+
+            // Assert
+            exception.Should().NotBeNull("An exception should be thrown");
+            exception.Should().BeOfType(typeof(HttpServiceException));
+        }
+
+    */
     }
 }
