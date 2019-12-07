@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{80C8AA38-B6E7-4916-A047-98FB4C3650AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.WebApi", "src\PokeShake.WebApi\PokeShake.WebApi.csproj", "{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.DTO", "src\PokeShake.DTO\PokeShake.DTO.csproj", "{7F02C8A6-96A8-40AF-ACC2-2788DF890565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Tests", "tests\PokeShake.Tests\PokeShake.Tests.csproj", "{0F58375E-5660-4154-A382-4845A1EF5585}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F58375E-5660-4154-A382-4845A1EF5585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F58375E-5660-4154-A382-4845A1EF5585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F58375E-5660-4154-A382-4845A1EF5585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F58375E-5660-4154-A382-4845A1EF5585}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
+		{0F58375E-5660-4154-A382-4845A1EF5585} = {80C8AA38-B6E7-4916-A047-98FB4C3650AF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5BF3CB7-81DD-40DC-AA17-C180FEC0E866}
+	EndGlobalSection
+EndGlobal
