@@ -3,18 +3,18 @@
 namespace PokeShake.Services.PokeApi.Models
 {
     /// <summary>
-    /// The flavor text entry class
+    /// The species name class
     /// </summary>
-    public class FlavorTextEntry
+    public class SpeciesName
     {
         /// <summary>
-        /// Gets or sets the flavor text.
+        /// Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The flavor text.
+        /// The name.
         /// </value>
-        [JsonProperty("flavor_text")]
-        public string FlavorText { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the language.
@@ -26,20 +26,11 @@ namespace PokeShake.Services.PokeApi.Models
         public ApiReference Language { get; set; }
 
         /// <summary>
-        /// Gets or sets the version.
-        /// </summary>
-        /// <value>
-        /// The version.
-        /// </value>
-        [JsonProperty("version")]
-        public ApiReference Version { get; set; }
-
-        /// <summary>
         /// Converts to string.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
-        public override string ToString() => $"[{Language?.Name}] {FlavorText}";
+        public override string ToString() => Name; 
     }
 }

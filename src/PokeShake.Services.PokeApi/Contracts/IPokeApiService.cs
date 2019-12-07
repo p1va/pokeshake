@@ -1,8 +1,7 @@
 ﻿using PokeShake.Services.PokeApi.Models;
-using System;
 using System.Threading.Tasks;
 
-namespace PokeShake.Services.PokeApi
+namespace PokeShake.Services.PokeApi.Contracts
 {
     /// <summary>
     /// The PokeApi service

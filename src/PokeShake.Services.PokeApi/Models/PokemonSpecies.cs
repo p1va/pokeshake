@@ -186,7 +186,7 @@ namespace PokeShake.Services.PokeApi.Models
         /// The names.
         /// </value>
         [JsonProperty("names")]
-        public List<Name> Names { get; set; }
+        public List<SpeciesName> Names { get; set; }
 
         /// <summary>
         /// Gets or sets the flavor text entries.

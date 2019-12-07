@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using EnsureThat;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PokeShake.Services.PokeApi.Contracts;
 using PokeShake.Services.PokeApi.Models;
 using System;
 using System.Collections.Generic;
@@ -12,9 +14,9 @@ namespace PokeShake.Services.PokeApi
     /// <summary>
     /// The HttpClient based implementation of the PokeApi service
     /// </summary>
-    /// <seealso cref="PokeShake.Services.Common.GenericHttpServiceBase" />
+    /// <seealso cref="PokeShake.Services.Common.HttpService" />
     /// <seealso cref="PokeShake.Services.PokeApi.IPokeApiService" />
-    public class HttpPokeApiService : Common.GenericHttpServiceBase, IPokeApiService
+    public class HttpPokeApiService : Common.HttpService, IPokeApiService
     {
         /// <summary>
         /// The base URL
@@ -38,7 +40,12 @@ namespace PokeShake.Services.PokeApi
         /// <param name="options">The options.</param>
         public HttpPokeApiService(HttpClient httpClient, IOptions<HttpPokeApiServiceOptions> options, ILogger<HttpPokeApiService> logger) : base(httpClient)
         {
-            //TODO: Handle null or white spaces maybe with ensure that
+            EnsureArg.IsNotNull(httpClient, nameof(httpClient));
+            EnsureArg.IsNotNull(logger, nameof(logger));
+            EnsureArg.IsNotNull(options.Value, nameof(options.Value));
+            EnsureArg.IsNotEmptyOrWhitespace(options.Value.BaseUrl, nameof(options.Value.BaseUrl));
+            EnsureArg.IsNotEmptyOrWhitespace(options.Value.SpeciesEndpoint, nameof(options.Value.SpeciesEndpoint));
+
             this.baseUrl = options.Value.BaseUrl;
             this.speciesEndpoint = options.Value.SpeciesEndpoint;
             this.logger = logger;
@@ -53,10 +60,17 @@ namespace PokeShake.Services.PokeApi
         /// </returns>
         public async Task<PokemonSpecies> GetPokemonAsync(string name)
         {
+            EnsureArg.IsNotEmptyOrWhitespace(name, nameof(name));
+
             logger.LogDebug("Getting pokemon w/ name [{name}]", name);
 
-            var pokemon = await GetAsync<PokemonSpecies>(
-                url: CombineUrl(baseUrl, speciesEndpoint, name));
+            // Combine the URL
+            var url = CombineUrl(baseUrl, speciesEndpoint, name);
+
+            logger.LogTrace("Combined URL {url}", url);
+
+            // Execute the request
+            var pokemon = await GetAsync<PokemonSpecies>(url);
 
             logger.LogDebug("Pokemon w/ name [{name}] found:", name, pokemon);
 

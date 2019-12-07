@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -7,9 +6,9 @@ using System.Threading.Tasks;
 namespace PokeShake.Services.Common
 {
     /// <summary>
-    /// The generic HTTP service base class
+    /// The HTTP service class
     /// </summary>
-    public abstract class GenericHttpServiceBase
+    public class HttpService
     {
         /// <summary>
         /// The HTTP client
@@ -17,25 +16,32 @@ namespace PokeShake.Services.Common
         private readonly HttpClient httpClient;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenericHttpServiceBase"/> class.
+        /// Initializes a new instance of the <see cref="HttpService"/> class.
         /// </summary>
         /// <param name="httpClient">The HTTP client.</param>
-        public GenericHttpServiceBase(HttpClient httpClient)
+        public HttpService(HttpClient httpClient)
         {
             this.httpClient = httpClient;
         }
 
-        public async Task<T> GetAsync<T>(string url) 
+        /// <summary>
+        /// Gets the URL asynchronously.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="url">The URL.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception">Something went wrong</exception>
+        public async Task<T> GetAsync<T>(string url)
         {
             // Get the resource
             var httpResponse = await httpClient.GetAsync(url);
 
+            // Read the content of the request
+            var content = await httpResponse.Content?.ReadAsStringAsync();
+
             // Check if response is successful (200 or 201)
             if (httpResponse.IsSuccessStatusCode)
             {
-                // Read the content of the request
-                var content = await httpResponse.Content.ReadAsStringAsync();
-
                 // Convert JSON to a POCO instance
                 var response = JsonConvert.DeserializeObject<T>(content);
 
@@ -44,8 +50,11 @@ namespace PokeShake.Services.Common
             }
             else
             {
-                //TODO: Handle
-                throw new Exception("Something went wrong");
+                // Throw an exception containing the details of the failure
+                throw new HttpServiceException(
+                    code: httpResponse.StatusCode,
+                    content: content,
+                    message: $"GET {url} failed with code {httpResponse.StatusCode} - {httpResponse.ReasonPhrase}");
             }
         }
 
@@ -54,7 +63,7 @@ namespace PokeShake.Services.Common
         /// </summary>
         /// <param name="parts">The parts.</param>
         /// <returns></returns>
-        protected string CombineUrl(params string[] parts) 
+        protected static string CombineUrl(params string[] parts)
         {
             //TODO: Handle this properly: nulls, slashes etc.
             return parts.Aggregate((i, j) => i + j);
