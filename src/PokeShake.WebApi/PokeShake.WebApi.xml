@@ -27,6 +27,69 @@
              <response code="404">If the specified pokemon was not found</response>
              <response code="500">If something went wrong</response>
         </member>
+        <member name="T:PokeShake.WebApi.Schemas.AppSwaggerGenOptionsExtension">
+            <summary>
+            The app swagger gen options extension class
+            </summary>
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.AppSwaggerGenOptionsExtension.AddAppSchemaFilters(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <summary>
+            Adds the application specific schema filters to the swagger options.
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.Schemas.GetPokemonResponseSchemaFilter">
+            <summary>
+            The get pokemon response schema filter
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.ISchemaFilter" />
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.GetPokemonResponseSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)">
+            <summary>
+            Applies the specified schema.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.Schemas.InternalServerErrorResponseSchemaFilter">
+            <summary>
+            The internal server error response schema filter
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.ISchemaFilter" />
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.InternalServerErrorResponseSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)">
+            <summary>
+            Applies the specified schema.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.Schemas.PokemonBadRequestErrorResponseSchemaFilter">
+            <summary>
+            The pokemon bad request error response schema filter
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.ISchemaFilter" />
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.PokemonBadRequestErrorResponseSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)">
+            <summary>
+            Applies the specified schema.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.Schemas.PokemonNotFoundErrorResponseSchemaFilter">
+            <summary>
+            The pokemon not found error response schema filter
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.ISchemaFilter" />
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.PokemonNotFoundErrorResponseSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)">
+            <summary>
+            Applies the specified schema.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="context">The context.</param>
+        </member>
         <member name="T:PokeShake.WebApi.Startup">
             <summary>
             The startup class

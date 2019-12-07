@@ -43,10 +43,10 @@ namespace PokeShake.WebApi.Controllers
         /// <response code="404">If the specified pokemon was not found</response>
         /// <response code="500">If something went wrong</response>
         [HttpGet("{name}")]
-        [ProducesResponseType(typeof(GetPokemonApiResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(DetailedApiErrorResponse), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(DetailedApiErrorResponse), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(DetailedApiErrorResponse), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(GetPokemonResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(PokemonBadRequestResponse), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(PokemonNotFoundResponse), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(InternalServerErrorResponse), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(string name)
         {
             logger.LogInformation(
@@ -65,10 +65,10 @@ namespace PokeShake.WebApi.Controllers
                     args: name);
 
                 // Create a new error response
-                var invalidRequestError = new DetailedApiErrorResponse 
+                var badRequestError = new PokemonBadRequestResponse 
                 {
                     //TODO: Keep track of error codes
-                    ErrorCode = "invalid_pokemon_name",
+                    ErrorCode = ErrorCodes.Pokemon.InvalidName,
                     ErrorMessage = "Please provide a valid Pokemon name",
                     ErrorDetails = new Dictionary<string, string> 
                     {
@@ -77,7 +77,7 @@ namespace PokeShake.WebApi.Controllers
                 };
 
                 // Return 400 because this is a malformed request
-                BadRequest(invalidRequestError);
+                BadRequest(badRequestError);
             }
 
             //TODO: Call our service and retrieve everything
@@ -89,7 +89,7 @@ namespace PokeShake.WebApi.Controllers
                 name, pokemonDescription);
 
             // Build a successful response
-            var successfulResponse = new GetPokemonApiResponse
+            var successfulResponse = new GetPokemonResponse
             {
                 Name = name,
                 Description = pokemonDescription

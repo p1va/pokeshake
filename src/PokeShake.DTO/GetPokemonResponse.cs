@@ -3,10 +3,10 @@
 namespace PokeShake.DTO
 {
     /// <summary>
-    /// The GET Pokemon API response
+    /// The GET Pokemon response
     /// </summary>
     /// <seealso cref="PokeShake.DTO.ApiResponseBase" />
-    public class GetPokemonApiResponse : ApiResponseBase
+    public class GetPokemonResponse : ApiResponseBase
     {
         /// <summary>
         /// Gets or sets the name.
@@ -27,19 +27,19 @@ namespace PokeShake.DTO
         public string Description { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetPokemonApiResponse"/> class.
+        /// Initializes a new instance of the <see cref="GetPokemonResponse"/> class.
         /// </summary>
-        public GetPokemonApiResponse()
+        public GetPokemonResponse()
         {
 
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetPokemonApiResponse"/> class.
+        /// Initializes a new instance of the <see cref="GetPokemonResponse"/> class.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="description">The description.</param>
-        public GetPokemonApiResponse(string name, string description)
+        public GetPokemonResponse(string name, string description)
         {
             this.Name = name;
             this.Description = description;

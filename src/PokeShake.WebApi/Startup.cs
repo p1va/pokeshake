@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PokeShake.WebApi.Schemas;
 
 namespace PokeShake.WebApi
 {
@@ -58,6 +59,9 @@ namespace PokeShake.WebApi
                     Title = "PokeShake API",
                     Version = "v1"
                 });
+
+                // Add schema filters
+                options.AddAppSchemaFilters();
 
                 // Declare the XML documentation file
                 var xmlDocumentationFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
