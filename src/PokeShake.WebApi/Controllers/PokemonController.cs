@@ -29,14 +29,14 @@ namespace PokeShake.WebApi.Controllers
         /// Returns the specified pokemon shakespearean description
         /// </returns>
         /// <remarks>
-        /// 
-        /// Example request:
-        /// GET /pokemon/charizard
-        /// {
-        ///     "name": "charizard",
-        ///     "description": "Charizard is a very nice"
-        /// }
-        /// 
+        /// Sample request:
+        ///
+        ///     GET /pokemon/charizard
+        ///     {
+        ///        "name": "charizard",
+        ///        "description": "Charizard is very nice pokemon"
+        ///     }
+        ///
         /// </remarks>
         /// <response code="200">Returns the specified pokemon shakespearean description</response>
         /// <response code="400">If the request arguments are not correct</response>
@@ -44,9 +44,9 @@ namespace PokeShake.WebApi.Controllers
         /// <response code="500">If something went wrong</response>
         [HttpGet("{name}")]
         [ProducesResponseType(typeof(GetPokemonApiResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(DetailedApiErrorResponse), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(DetailedApiErrorResponse), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(DetailedApiErrorResponse), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(string name)
         {
             logger.LogInformation(
