@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,13 +7,24 @@ using PokeShake.DTO;
 
 namespace PokeShake.WebApi.Controllers
 {
+    /// <summary>
+    /// The pokemon controller
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
     [ApiController]
     [Route("pokemon")]
     [Produces("application/json")]
     public class PokemonController : ControllerBase
     {
+        /// <summary>
+        /// The logger
+        /// </summary>
         private readonly ILogger<PokemonController> logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PokemonController"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
         public PokemonController(ILogger<PokemonController> logger)
         {
             this.logger = logger;
@@ -30,13 +39,12 @@ namespace PokeShake.WebApi.Controllers
         /// </returns>
         /// <remarks>
         /// Sample request:
-        ///
+        /// 
         ///     GET /pokemon/charizard
         ///     {
-        ///        "name": "charizard",
-        ///        "description": "Charizard is very nice pokemon"
+        ///         "name": "charizard",
+        ///         "description": "Charizard is very nice pokemon"
         ///     }
-        ///
         /// </remarks>
         /// <response code="200">Returns the specified pokemon shakespearean description</response>
         /// <response code="400">If the request arguments are not correct</response>

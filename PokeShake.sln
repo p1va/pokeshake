@@ -15,11 +15,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Tests", "tests\Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.PokeApi", "src\PokeShake.Services.PokeApi\PokeShake.Services.PokeApi.csproj", "{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.ShakespeareanTranslation", "src\PokeShake.Services.ShakespeareanTranslation\PokeShake.Services.ShakespeareanTranslation.csproj", "{55D609AE-4597-4D62-974E-42B60397C896}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.Common", "src\PokeShake.Services.Common\PokeShake.Services.Common.csproj", "{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.PokeApi.Tests", "tests\PokeShake.Services.PokeApi.Tests\PokeShake.Services.PokeApi.Tests.csproj", "{4E01511D-4657-45C6-B625-1A670449F58B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.FunTranslations", "src\PokeShake.Services.FunTranslations\PokeShake.Services.FunTranslations.csproj", "{F10F3FEE-7764-4B56-974A-E0813329404E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.FunTranslations.Tests", "tests\PokeShake.Services.FunTranslations.Tests\PokeShake.Services.FunTranslations.Tests.csproj", "{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +45,6 @@ Global
 		{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55D609AE-4597-4D62-974E-42B60397C896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55D609AE-4597-4D62-974E-42B60397C896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55D609AE-4597-4D62-974E-42B60397C896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55D609AE-4597-4D62-974E-42B60397C896}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,6 +53,14 @@ Global
 		{4E01511D-4657-45C6-B625-1A670449F58B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E01511D-4657-45C6-B625-1A670449F58B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E01511D-4657-45C6-B625-1A670449F58B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10F3FEE-7764-4B56-974A-E0813329404E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10F3FEE-7764-4B56-974A-E0813329404E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10F3FEE-7764-4B56-974A-E0813329404E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10F3FEE-7764-4B56-974A-E0813329404E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,9 +70,10 @@ Global
 		{7F02C8A6-96A8-40AF-ACC2-2788DF890565} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
 		{0F58375E-5660-4154-A382-4845A1EF5585} = {80C8AA38-B6E7-4916-A047-98FB4C3650AF}
 		{D7EBB6A3-8160-4EEC-8113-3049034EAE5F} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
-		{55D609AE-4597-4D62-974E-42B60397C896} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
 		{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
 		{4E01511D-4657-45C6-B625-1A670449F58B} = {80C8AA38-B6E7-4916-A047-98FB4C3650AF}
+		{F10F3FEE-7764-4B56-974A-E0813329404E} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9} = {80C8AA38-B6E7-4916-A047-98FB4C3650AF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5BF3CB7-81DD-40DC-AA17-C180FEC0E866}

@@ -4,28 +4,62 @@
         <name>PokeShake.WebApi</name>
     </assembly>
     <members>
+        <member name="T:PokeShake.WebApi.Controllers.PokemonController">
+            <summary>
+            The pokemon controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:PokeShake.WebApi.Controllers.PokemonController.logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:PokeShake.WebApi.Controllers.PokemonController.#ctor(Microsoft.Extensions.Logging.ILogger{PokeShake.WebApi.Controllers.PokemonController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:PokeShake.WebApi.Controllers.PokemonController"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
         <member name="M:PokeShake.WebApi.Controllers.PokemonController.Get(System.String)">
-             <summary>
-             Gets the shakespearean description of a pokemon given the name.
-             </summary>
-             <param name="name">The pokemon name.</param>
-             <returns>
-             Returns the specified pokemon shakespearean description
-             </returns>
-             <remarks>
-             Sample request:
+            <summary>
+            Gets the shakespearean description of a pokemon given the name.
+            </summary>
+            <param name="name">The pokemon name.</param>
+            <returns>
+            Returns the specified pokemon shakespearean description
+            </returns>
+            <remarks>
+            Sample request:
             
-                 GET /pokemon/charizard
-                 {
+                GET /pokemon/charizard
+                {
                     "name": "charizard",
                     "description": "Charizard is very nice pokemon"
-                 }
-            
-             </remarks>
-             <response code="200">Returns the specified pokemon shakespearean description</response>
-             <response code="400">If the request arguments are not correct</response>
-             <response code="404">If the specified pokemon was not found</response>
-             <response code="500">If something went wrong</response>
+                }
+            </remarks>
+            <response code="200">Returns the specified pokemon shakespearean description</response>
+            <response code="400">If the request arguments are not correct</response>
+            <response code="404">If the specified pokemon was not found</response>
+            <response code="500">If something went wrong</response>
+        </member>
+        <member name="T:PokeShake.WebApi.Program">
+            <summary>
+            The program class
+            </summary>
+        </member>
+        <member name="M:PokeShake.WebApi.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:PokeShake.WebApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns></returns>
         </member>
         <member name="T:PokeShake.WebApi.Schemas.AppSwaggerGenOptionsExtension">
             <summary>
