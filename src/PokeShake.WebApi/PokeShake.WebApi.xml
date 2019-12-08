@@ -20,12 +20,18 @@
             The service
             </summary>
         </member>
-        <member name="M:PokeShake.WebApi.Controllers.PokemonController.#ctor(Microsoft.Extensions.Logging.ILogger{PokeShake.WebApi.Controllers.PokemonController},PokeShake.Services.PokemonShakespeareanDescription.Contracts.IPokemonShakespeareanDescriptionService)">
+        <member name="F:PokeShake.WebApi.Controllers.PokemonController.cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
+        <member name="M:PokeShake.WebApi.Controllers.PokemonController.#ctor(Microsoft.Extensions.Logging.ILogger{PokeShake.WebApi.Controllers.PokemonController},PokeShake.Services.PokemonShakespeareanDescription.Contracts.IPokemonShakespeareanDescriptionService,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
             <summary>
             Initializes a new instance of the <see cref="T:PokeShake.WebApi.Controllers.PokemonController" /> class.
             </summary>
             <param name="logger">The logger.</param>
             <param name="service">The service.</param>
+            <param name="cache">The cache.</param>
         </member>
         <member name="M:PokeShake.WebApi.Controllers.PokemonController.GetAsync(System.String)">
             <summary>
@@ -48,6 +54,13 @@
             <response code="400">If the request arguments are not correct</response>
             <response code="404">If the specified pokemon was not found</response>
             <response code="500">If something went wrong</response>
+        </member>
+        <member name="M:PokeShake.WebApi.Controllers.PokemonController.GetCacheKey(System.String)">
+            <summary>
+            Gets the cache key.
+            </summary>
+            <param name="pokemonName">Name of the pokemon.</param>
+            <returns>The cache key.</returns>
         </member>
         <member name="T:PokeShake.WebApi.Program">
             <summary>
@@ -152,12 +165,14 @@
         <member name="M:PokeShake.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             Configures the services.
+            This method gets called by the runtime. Use this method to add services to the container.
             </summary>
             <param name="services">The services.</param>
         </member>
         <member name="M:PokeShake.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             <summary>
             Configures the specified application.
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             </summary>
             <param name="app">The application.</param>
             <param name="env">The env.</param>

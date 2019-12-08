@@ -50,9 +50,9 @@ namespace PokeShake.WebApi
         /// </value>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         /// <summary>
         /// Configures the services.
+        /// This method gets called by the runtime. Use this method to add services to the container.
         /// </summary>
         /// <param name="services">The services.</param>
         public void ConfigureServices(IServiceCollection services)
@@ -85,6 +85,12 @@ namespace PokeShake.WebApi
                 options.IncludeXmlComments(xmlDocumentationFilePath);
             });
 
+            // Add in memory cache
+            services.AddMemoryCache(options => 
+            {
+                // TODO: Set a cache size limit here
+            });
+
             // Retrieve configuration and inject services options
             services.Configure<HttpFunTranslationsServiceOptions>(Configuration.GetSection("FunTranslations"));
             services.Configure<HttpPokeApiServiceOptions>(Configuration.GetSection("PokeApi"));
@@ -95,9 +101,9 @@ namespace PokeShake.WebApi
             services.AddScoped<IPokemonShakespeareanDescriptionService, PokemonShakespeareanDescriptionService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// <summary>
         /// Configures the specified application.
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// </summary>
         /// <param name="app">The application.</param>
         /// <param name="env">The env.</param>
