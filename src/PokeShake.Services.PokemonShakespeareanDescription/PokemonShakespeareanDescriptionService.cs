@@ -108,7 +108,7 @@ namespace PokeShake.Services.PokemonShakespeareanDescription
                 {
                     // This is the case where a pokemon was not found
                     case System.Net.HttpStatusCode.NotFound:
-                        throw new PokemonNotFoundException($"No pokemon found having name {pokemon}", serviceException);
+                        throw new PokemonNotFoundException($"No pokemon found having name {pokemonName}", serviceException);
 
                     // This is the case where something illegal was sent
                     case System.Net.HttpStatusCode.BadRequest:
@@ -129,11 +129,17 @@ namespace PokeShake.Services.PokemonShakespeareanDescription
                 throw new PokemonGenericException($"An unexpected error occurred while retrieving pokemon {pokemonName} info", ex);
             }
 
-            //TODO: Handle null pokemon?
+            // Handle null pokemon case even if it is unlikely to happen
+            if (pokemon == null)
+            {
+                logger.LogError("PokeAPI response for pokemon {pokemonName} is null", pokemonName);
+
+                throw new PokemonGenericException($"An unexpected error occurred while retrieving pokemon {pokemonName} info");
+            }
 
             logger.LogDebug("Found a match for pokemon {pokemonName}. It has ID {id}", pokemonName, pokemon.Id);
 
-            logger.LogTrace("Pokemon {pokemonName} has {count} descriptions", pokemonName, pokemon.Id, pokemon.FlavorTextEntries.Count);
+            logger.LogTrace("Pokemon {pokemonName} has {count} descriptions", pokemonName, pokemon.Id, pokemon.FlavorTextEntries?.Count);
 
             // Check if the pokemon does have any descriptions
             if (pokemon.FlavorTextEntries == null || !pokemon.FlavorTextEntries.Any())
@@ -200,7 +206,7 @@ namespace PokeShake.Services.PokemonShakespeareanDescription
             return new PokemonShakespeareanDescriptionResult
             {
                 Name = pokemonName,
-                Description = cleanDescription
+                Description = translatedDescription
             }; ;
         }
     }
