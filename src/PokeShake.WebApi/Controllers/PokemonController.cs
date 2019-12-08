@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PokeShake.Dto;
+using PokeShake.Services.PokemonShakespeareanDescription.Contracts;
 
 namespace PokeShake.WebApi.Controllers
 {
@@ -22,12 +23,19 @@ namespace PokeShake.WebApi.Controllers
         private readonly ILogger<PokemonController> logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PokemonController"/> class.
+        /// The service
+        /// </summary>
+        private readonly IPokemonShakespeareanDescriptionService service;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PokemonController" /> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
-        public PokemonController(ILogger<PokemonController> logger)
+        /// <param name="service">The service.</param>
+        public PokemonController(ILogger<PokemonController> logger, IPokemonShakespeareanDescriptionService service)
         {
             this.logger = logger;
+            this.service = service;
         }
 
         /// <summary>
@@ -55,7 +63,7 @@ namespace PokeShake.WebApi.Controllers
         [ProducesResponseType(typeof(PokemonBadRequestResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(PokemonNotFoundResponse), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(InternalServerErrorResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Get(string name)
+        public async Task<IActionResult> GetAsync(string name)
         {
             logger.LogInformation(
                 eventId: WebApiLoggingEvents.GetPokemonShakespeareanDescr,
@@ -88,19 +96,22 @@ namespace PokeShake.WebApi.Controllers
                 BadRequest(badRequestError);
             }
 
-            //TODO: Call our service and retrieve everything
-            var pokemonDescription = $"{name} is a very nice pokemon";
+            // Force name to lower case
+            name = name.ToLower();
+
+            // Call the service and retrieve the description
+            var pokemonDescriptionResult = await service.GetAsync(pokemonName: name);
 
             logger.LogInformation(
                 eventId: WebApiLoggingEvents.GetPokemonShakespeareanDescr,
-                message: "Successfully retrieved shakespearean description of pokemon [{name}]: {description}",
-                name, pokemonDescription);
+                message: "Successfully retrieved shakespearean description of pokemon {name}: {description}",
+                pokemonDescriptionResult.Name, pokemonDescriptionResult.Description);
 
             // Build a successful response
             var successfulResponse = new GetPokemonResponse
             {
-                Name = name,
-                Description = pokemonDescription
+                Name = pokemonDescriptionResult.Name,
+                Description = pokemonDescriptionResult.Description
             };
 
             // Return 200 status code along with the response object

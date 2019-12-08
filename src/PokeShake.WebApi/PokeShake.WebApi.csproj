@@ -22,6 +22,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PokeShake.DTO\PokeShake.Dto.csproj" />
+    <ProjectReference Include="..\PokeShake.Services.FunTranslations\PokeShake.Services.FunTranslations.csproj" />
+    <ProjectReference Include="..\PokeShake.Services.PokeApi\PokeShake.Services.PokeApi.csproj" />
+    <ProjectReference Include="..\PokeShake.Services.PokemonShakespeareanDescription\PokeShake.Services.PokemonShakespeareanDescription.csproj" />
   </ItemGroup>
 
 

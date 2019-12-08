@@ -12,6 +12,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PokeShake.Services.FunTranslations;
+using PokeShake.Services.FunTranslations.Contracts;
+using PokeShake.Services.PokeApi;
+using PokeShake.Services.PokeApi.Contracts;
+using PokeShake.Services.PokemonShakespeareanDescription;
+using PokeShake.Services.PokemonShakespeareanDescription.Contracts;
 using PokeShake.WebApi.Schemas;
 
 namespace PokeShake.WebApi
@@ -72,6 +78,15 @@ namespace PokeShake.WebApi
                 // Set the XML documentation file location so that Swagger can include it in the UI
                 options.IncludeXmlComments(xmlDocumentationFilePath);
             });
+
+            // Retrieve configuration and inject services options
+            services.Configure<HttpFunTranslationsServiceOptions>(Configuration.GetSection("FunTranslations"));
+            services.Configure<HttpPokeApiServiceOptions>(Configuration.GetSection("PokeApi"));
+
+            // Register services implementation
+            services.AddHttpClient<IPokeApiService, HttpPokeApiService>();
+            services.AddHttpClient<IFunTranslationsService, HttpFunTranslationsService>();
+            services.AddScoped<IPokemonShakespeareanDescriptionService, PokemonShakespeareanDescriptionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

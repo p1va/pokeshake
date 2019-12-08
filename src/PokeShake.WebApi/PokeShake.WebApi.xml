@@ -15,13 +15,19 @@
             The logger
             </summary>
         </member>
-        <member name="M:PokeShake.WebApi.Controllers.PokemonController.#ctor(Microsoft.Extensions.Logging.ILogger{PokeShake.WebApi.Controllers.PokemonController})">
+        <member name="F:PokeShake.WebApi.Controllers.PokemonController.service">
             <summary>
-            Initializes a new instance of the <see cref="T:PokeShake.WebApi.Controllers.PokemonController"/> class.
+            The service
+            </summary>
+        </member>
+        <member name="M:PokeShake.WebApi.Controllers.PokemonController.#ctor(Microsoft.Extensions.Logging.ILogger{PokeShake.WebApi.Controllers.PokemonController},PokeShake.Services.PokemonShakespeareanDescription.Contracts.IPokemonShakespeareanDescriptionService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PokeShake.WebApi.Controllers.PokemonController" /> class.
             </summary>
             <param name="logger">The logger.</param>
+            <param name="service">The service.</param>
         </member>
-        <member name="M:PokeShake.WebApi.Controllers.PokemonController.Get(System.String)">
+        <member name="M:PokeShake.WebApi.Controllers.PokemonController.GetAsync(System.String)">
             <summary>
             Gets the shakespearean description of a pokemon given the name.
             </summary>
