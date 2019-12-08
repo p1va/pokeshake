@@ -7,13 +7,13 @@ using System.Net;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace PokeShake.Services.PokeApi.Tests
+namespace PokeShake.Services.PokeApi.Tests.Integration
 {
     /// <summary>
-    /// The PokeApiService integration tests class
+    /// The HttpPokeApiService integration tests class
     /// </summary>
-    [Collection("PokeApiService Integration Tests")]
-    public class PokeApiIntegrationTests
+    [Collection("HttpPokeApiService Integration Tests")]
+    public class HttpPokeApiServiceIntegrationTests
     {
         /// <summary>
         /// The test prefix

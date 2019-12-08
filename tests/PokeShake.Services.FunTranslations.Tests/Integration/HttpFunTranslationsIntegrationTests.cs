@@ -5,19 +5,19 @@ using System;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace PokeShake.Services.FunTranslations.Tests
+namespace PokeShake.Services.FunTranslations.Tests.Integration
 {
     /// <summary>
-    /// The FunTranslationsService integration tests
+    /// The HttpFunTranslationsService integration tests
     /// </summary>
     /// <seealso cref="System.IDisposable" />
-    [Collection("FunTranslationsService Integration Tests")]
-    public class FunTranslationsIntegrationTests
+    [Collection("HttpFunTranslationsService Integration Tests")]
+    public class HttpFunTranslationsUnitTests
     {
         /// <summary>
         /// The test prefix
         /// </summary>
-        public const string TestPrefix = "FunTranslationsService - ";
+        public const string TestPrefix = "HttpFunTranslationsService - ";
 
         /// <summary>
         /// Determines whether this instance [can do shakespearean translation].
