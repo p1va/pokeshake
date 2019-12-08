@@ -39,6 +39,11 @@
             /// The pokemon invalid name error code
             /// </summary>
             public const string InvalidName = Prefix + ErrorCodes.InvalidName;
+
+            /// <summary>
+            /// The internal server error code
+            /// </summary>
+            public const string InternalServerError = Prefix + ErrorCodes.InternalServerError;
         }
     }
 }

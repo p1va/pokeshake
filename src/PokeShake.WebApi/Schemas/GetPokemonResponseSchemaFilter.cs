@@ -22,8 +22,8 @@ namespace PokeShake.WebApi.Schemas
             {
                 schema.Example = new OpenApiObject
                 {
-                    ["name"] = new OpenApiString("stefano"),
-                    ["description"] = new OpenApiString("Stefano is a very nice pokemon")
+                    ["name"] = new OpenApiString("charizard"),
+                    ["description"] = new OpenApiString("Charizard flies 'round the sky in search of powerful opponents. 't breathes fire of such most wondrous heat yond 't melts aught. However,  't nev'r turns its fiery breath on any opponent weaker than itself.")
                 };
             }           
         }

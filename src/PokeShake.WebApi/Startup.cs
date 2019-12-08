@@ -2,22 +2,28 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
+using PokeShake.Dto;
 using PokeShake.Services.FunTranslations;
 using PokeShake.Services.FunTranslations.Contracts;
 using PokeShake.Services.PokeApi;
 using PokeShake.Services.PokeApi.Contracts;
 using PokeShake.Services.PokemonShakespeareanDescription;
 using PokeShake.Services.PokemonShakespeareanDescription.Contracts;
+using PokeShake.Services.PokemonShakespeareanDescription.Exceptions;
 using PokeShake.WebApi.Schemas;
 
 namespace PokeShake.WebApi
@@ -97,10 +103,70 @@ namespace PokeShake.WebApi
         /// <param name="env">The env.</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            // Add the global exception handler
+            app.UseExceptionHandler(a => a.Run(async context =>
             {
-                app.UseDeveloperExceptionPage();
-            }
+                // Retrieve the exception handler
+                var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+
+                // Extract the exception
+                var exception = exceptionHandlerPathFeature.Error;
+
+                // Declare response string
+                string response = null;
+
+                // Declare status code
+                int statusCode = 0;
+
+                switch (exception)
+                {
+                    case PokemonInvalidArgsException invalidException:
+
+                        // Set status code to 400
+                        statusCode = (int)HttpStatusCode.BadRequest;
+
+                        // Create a new response
+                        response = JsonConvert.SerializeObject(new PokemonBadRequestResponse
+                        { 
+                            ErrorCode = ErrorCodes.Pokemon.InvalidName, 
+                            ErrorMessage = invalidException.Message
+                        });
+
+                        break;
+
+                    case PokemonNotFoundException notFoundException:
+
+                        // Set status code to 404
+                        statusCode = (int)HttpStatusCode.NotFound;
+
+                        // Create a new response
+                        response = JsonConvert.SerializeObject(new PokemonNotFoundResponse
+                        {
+                            ErrorCode = ErrorCodes.Pokemon.NotFound,
+                            ErrorMessage = notFoundException.Message
+                        });
+
+                        break;
+
+                    default:
+
+                        // Set status code to 400
+                        statusCode = (int)HttpStatusCode.InternalServerError;
+
+                        // Create a new response
+                        response = JsonConvert.SerializeObject(new InternalServerErrorResponse
+                        {
+                            ErrorCode = ErrorCodes.Pokemon.InternalServerError,
+                            ErrorMessage = exception.Message
+                        });
+
+                        break;
+                }
+
+                context.Response.StatusCode = statusCode;
+                context.Response.ContentType = "application/json";
+                await context.Response.WriteAsync(response);
+            }));
 
             // Enable middleware to serve the generated Swagger JSON
             app.UseSwagger();

@@ -51,7 +51,7 @@ namespace PokeShake.WebApi.Controllers
         ///     GET /pokemon/charizard
         ///     {
         ///         "name": "charizard",
-        ///         "description": "Charizard is very nice pokemon"
+        ///         "description": "Charizard flies 'round the sky in search of powerful opponents. 't breathes fire of such most wondrous heat yond 't melts aught. However,  't nev'r turns its fiery breath on any opponent weaker than itself."
         ///     }
         /// </remarks>
         /// <response code="200">Returns the specified pokemon shakespearean description</response>
@@ -108,6 +108,7 @@ namespace PokeShake.WebApi.Controllers
                 pokemonDescriptionResult.Name, pokemonDescriptionResult.Description);
 
             // Build a successful response
+            // We don't need a mapper just for this
             var successfulResponse = new GetPokemonResponse
             {
                 Name = pokemonDescriptionResult.Name,
