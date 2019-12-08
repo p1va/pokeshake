@@ -12,7 +12,7 @@ namespace PokeShake.Services.FunTranslations.Tests
     /// </summary>
     /// <seealso cref="System.IDisposable" />
     [Collection("FunTranslationsService Integration Tests")]
-    public class FunTranslationsIntegrationTests : IDisposable
+    public class FunTranslationsIntegrationTests
     {
         /// <summary>
         /// The test prefix
@@ -64,13 +64,6 @@ namespace PokeShake.Services.FunTranslations.Tests
             translation.Contents.Text.Should().Be(textToTranslate, "Response text to translate should be the same as the provided one");
             translation.Contents.Translation.Should().Be("shakespeare", "Response translation should be shakespeare");
             translation.Contents.Translated.Should().Be("The quick brown fox jumps ov'r the distemperate dog", "Translated text should be like the expected one");
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
         }
     }
 }

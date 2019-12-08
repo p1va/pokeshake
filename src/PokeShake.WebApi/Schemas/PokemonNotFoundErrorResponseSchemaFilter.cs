@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-using PokeShake.DTO;
+using PokeShake.Dto;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace PokeShake.WebApi.Schemas

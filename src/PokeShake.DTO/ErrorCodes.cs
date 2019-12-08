@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PokeShake.DTO
+﻿namespace PokeShake.Dto
 {
     /// <summary>
     /// The error codes class

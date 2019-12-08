@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 
-namespace PokeShake.DTO
+namespace PokeShake.Dto
 {
     /// <summary>
     /// The GET Pokemon response
     /// </summary>
-    /// <seealso cref="PokeShake.DTO.ApiResponseBase" />
+    /// <seealso cref="PokeShake.Dto.ApiResponseBase" />
     public class GetPokemonResponse : ApiResponseBase
     {
         /// <summary>

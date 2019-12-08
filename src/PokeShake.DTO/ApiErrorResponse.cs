@@ -1,14 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace PokeShake.DTO
+namespace PokeShake.Dto
 {
     /// <summary>
     /// The API error response
     /// </summary>
-    /// <seealso cref="PokeShake.DTO.ApiResponseBase" />
+    /// <seealso cref="PokeShake.Dto.ApiResponseBase" />
     public class ApiErrorResponse : ApiResponseBase
     {
         /// <summary>

@@ -2,7 +2,6 @@ using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using PokeShake.Services.Common;
 using PokeShake.Services.PokeApi.Contracts;
-using System;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -14,7 +13,7 @@ namespace PokeShake.Services.PokeApi.Tests
     /// The PokeApiService integration tests class
     /// </summary>
     [Collection("PokeApiService Integration Tests")]
-    public class PokeApiIntegrationTests : IDisposable
+    public class PokeApiIntegrationTests
     {
         /// <summary>
         /// The test prefix
@@ -106,14 +105,6 @@ namespace PokeShake.Services.PokeApi.Tests
             exception.Should().NotBeNull("An exception should be thrown");
             exception.Should().BeOfType(typeof(HttpServiceException));
             ((HttpServiceException)exception).StatusCode.Should().Be(HttpStatusCode.NotFound, "The server should return not found");
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            // Dispose any test related stuff
         }
 
         //TODO: Test for timeout

@@ -1,4 +1,4 @@
-﻿namespace PokeShake.DTO
+﻿namespace PokeShake.Dto
 {
     /// <summary>
     /// The API response abstract base class

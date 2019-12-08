@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using PokeShake.DTO;
+using PokeShake.Dto;
 
 namespace PokeShake.WebApi.Controllers
 {

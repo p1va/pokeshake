@@ -9,19 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{80C8AA38
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.WebApi", "src\PokeShake.WebApi\PokeShake.WebApi.csproj", "{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.DTO", "src\PokeShake.DTO\PokeShake.DTO.csproj", "{7F02C8A6-96A8-40AF-ACC2-2788DF890565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Dto", "src\PokeShake.DTO\PokeShake.Dto.csproj", "{7F02C8A6-96A8-40AF-ACC2-2788DF890565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Tests", "tests\PokeShake.Tests\PokeShake.Tests.csproj", "{0F58375E-5660-4154-A382-4845A1EF5585}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Tests", "tests\PokeShake.Tests\PokeShake.Tests.csproj", "{0F58375E-5660-4154-A382-4845A1EF5585}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.PokeApi", "src\PokeShake.Services.PokeApi\PokeShake.Services.PokeApi.csproj", "{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.PokeApi", "src\PokeShake.Services.PokeApi\PokeShake.Services.PokeApi.csproj", "{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.Common", "src\PokeShake.Services.Common\PokeShake.Services.Common.csproj", "{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.Common", "src\PokeShake.Services.Common\PokeShake.Services.Common.csproj", "{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.PokeApi.Tests", "tests\PokeShake.Services.PokeApi.Tests\PokeShake.Services.PokeApi.Tests.csproj", "{4E01511D-4657-45C6-B625-1A670449F58B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.PokeApi.Tests", "tests\PokeShake.Services.PokeApi.Tests\PokeShake.Services.PokeApi.Tests.csproj", "{4E01511D-4657-45C6-B625-1A670449F58B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.FunTranslations", "src\PokeShake.Services.FunTranslations\PokeShake.Services.FunTranslations.csproj", "{F10F3FEE-7764-4B56-974A-E0813329404E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.FunTranslations", "src\PokeShake.Services.FunTranslations\PokeShake.Services.FunTranslations.csproj", "{F10F3FEE-7764-4B56-974A-E0813329404E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.Services.FunTranslations.Tests", "tests\PokeShake.Services.FunTranslations.Tests\PokeShake.Services.FunTranslations.Tests.csproj", "{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.FunTranslations.Tests", "tests\PokeShake.Services.FunTranslations.Tests\PokeShake.Services.FunTranslations.Tests.csproj", "{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

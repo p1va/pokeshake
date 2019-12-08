@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PokeShake.DTO\PokeShake.DTO.csproj" />
+    <ProjectReference Include="..\PokeShake.DTO\PokeShake.Dto.csproj" />
   </ItemGroup>
 
 
