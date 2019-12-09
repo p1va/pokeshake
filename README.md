@@ -64,18 +64,22 @@ Build a docker image containing the web api app
 docker build -f src/PokeShake.WebApi/Dockerfile -t pokeshakeapi ...
 ```
 
-Double check the outcome of the command by looking at the list of images. You should see an image named  `pokeshakeapi`
+Double check the outcome of the command by looking at the list of images.
+
+You should see an image named  `pokeshakeapi`
 
 ```sh
 docker image ls
 ```
 
 ### Run
-Create and run a container based on the image with the following command
+Create and run a container based on the image we just built with the following command
 ```sh
 docker run -d -p 5000:80 --name mypoke pokeshakeapi
 ```
-Double check the outcome of the command by looking at the list of active containers. You should see a container named `mypoke`
+Double check the outcome of the command by looking at the list of active containers. 
+
+A container named `mypoke` should be there
 ```sh
 docker container ls
 ```
