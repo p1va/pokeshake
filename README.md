@@ -20,14 +20,13 @@ $ curl http://localhost:5000/pokemon/charizard
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
 In order to build, test and run this project the following dependencies need to be fulfilled:
 * **Docker**
 * **.NET Core SDK 3.1.0**
 
-This document assumes that `git`, `dotnet` and `docker` are part of your `PATH` so that they are considered valid commands when entered in a shell. 
+This document also assumes that `git`, `dotnet` and `docker` are part of your `PATH` so that they are considered valid commands when entered in a shell. 
 
 You can double check that by trying the following commands:
 
@@ -45,7 +44,9 @@ dotnet --version
 docker --version
 #Docker version 19.03.4, build 9013bf5
 ```
-### Build
+
+## Build  🔨 
+
 Clone the master branch of this repository into your local system
 
 ```sh
@@ -66,23 +67,27 @@ docker build -f src/PokeShake.WebApi/Dockerfile -t pokeshakeapi ...
 
 Double check the outcome of the command by looking at the list of images.
 
-You should see an image named  `pokeshakeapi`
+An image named `pokeshakeapi` should be there.
 
 ```sh
 docker image ls
 ```
 
-### Run
+## Run 🚀
+
 Create and run a container based on the image we just built with the following command
+
 ```sh
 docker run -d -p 5000:80 --name mypoke pokeshakeapi
 ```
 Double check the outcome of the command by looking at the list of active containers. 
 
-A container named `mypoke` should be there
+A container named `mypoke` should be there.
+
 ```sh
 docker container ls
 ```
+
 From the list you should also be able to identify the container ID which you can use to view the app logs.
 
 ```sh
@@ -101,10 +106,11 @@ In this example i am using `curl`
 ```sh
 curl http://localhost:5000/pokemon/charizard
 ```
+
 In addition you can visually test the API by browsing to [http://localhost:5000/](http://localhost:5000/).
 
 
-## Running the tests
+## Test 🔮
 
 Explain how to run the automated tests for this system
 
@@ -116,26 +122,14 @@ Explain what these tests test and why
 Give an example
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```sh
-Give an example
-```
-
-## Deployment
-
-
-
-## Built With
+## Built With 👨🏻‍💻
 * [.NET Core 3.1](https://dotnet.microsoft.com/download) - Development framework
 * [AspNet Core 3.1](https://github.com/aspnet/AspNetCore) - Web framework of choice
 * [Docker](https://www.docker.com/) - Containers platform
 * [Visual Studio 2019](https://visualstudio.microsoft.com/it/vs/?rr=https%3A%2F%2Fwww.google.com%2F) -  IDE
 * [VSCode](https://code.visualstudio.com/) - IDE
 
-## Acknowledgments
+## Acknowledgments 💪🏼
 
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template) - The best README template
 * [Ensure.That](https://github.com/danielwertheim/Ensure.That) - Guard clause library
