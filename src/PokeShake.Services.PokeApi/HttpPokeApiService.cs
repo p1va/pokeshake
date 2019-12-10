@@ -34,21 +34,22 @@ namespace PokeShake.Services.PokeApi
         private readonly ILogger<HttpPokeApiService> logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HttpPokeApiService"/> class.
+        /// Initializes a new instance of the <see cref="HttpPokeApiService" /> class.
         /// </summary>
         /// <param name="httpClient">The HTTP client.</param>
         /// <param name="options">The options.</param>
-        public HttpPokeApiService(HttpClient httpClient, IOptions<HttpPokeApiServiceOptions> options, ILogger<HttpPokeApiService> logger) : base(httpClient)
+        /// <param name="loggerFactory">The logger factory.</param>
+        public HttpPokeApiService(HttpClient httpClient, IOptions<HttpPokeApiServiceOptions> options, ILoggerFactory loggerFactory) : base(httpClient)
         {
             EnsureArg.IsNotNull(httpClient, nameof(httpClient));
-            EnsureArg.IsNotNull(logger, nameof(logger));
+            EnsureArg.IsNotNull(loggerFactory, nameof(loggerFactory));
             EnsureArg.IsNotNull(options.Value, nameof(options.Value));
             EnsureArg.IsNotEmptyOrWhitespace(options.Value.BaseUrl, nameof(options.Value.BaseUrl));
             EnsureArg.IsNotEmptyOrWhitespace(options.Value.SpeciesEndpoint, nameof(options.Value.SpeciesEndpoint));
 
             this.baseUrl = options.Value.BaseUrl;
             this.speciesEndpoint = options.Value.SpeciesEndpoint;
-            this.logger = logger;
+            this.logger = loggerFactory.CreateLogger<HttpPokeApiService>();
         }
 
         /// <summary>

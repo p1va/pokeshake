@@ -107,7 +107,7 @@ In this example i am using `curl`
 curl http://localhost:5000/pokemon/charizard
 ```
 
-In addition you can visually test the API by browsing to [http://localhost:5000/](http://localhost:5000/).
+In addition you can visually test the API by browsing to [http://localhost:5000/](http://localhost:5000/) where the Swagger UI is located.
 
 
 ## Test 🔮
