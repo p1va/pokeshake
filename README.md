@@ -28,7 +28,7 @@ In order to build, test and run this project the following dependencies need to 
 
 This document also assumes that `git`, `dotnet` and `docker` are part of your `PATH` so that they are considered valid commands when entered in a shell. 
 
-You can double check that by trying the following commands:
+You can double check that by trying the following commands that should return you an output similar to the below ones.
 
 ```sh
 git --version
@@ -131,11 +131,11 @@ Give an example
 
 ## Acknowledgments 💪🏼
 
-* [Best-README-Template](https://github.com/othneildrew/Best-README-Template) - The best README template
-* [Ensure.That](https://github.com/danielwertheim/Ensure.That) - Guard clause library
-* [FluentAssertions](https://fluentassertions.com/) - Extension methods for tests assertions
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template) - A README template
+* [Ensure.That](https://github.com/danielwertheim/Ensure.That) - A guard clause library
+* [FluentAssertions](https://fluentassertions.com/) - An extension methods libraries for tests assertions
 * [FunTranslations API](https://funtranslations.com/api/shakespeare) - An API for unusual text translations
 * [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) - A JSON serialization/deserialization library
 * [PokeAPI](https://pokeapi.co) - An API for retrieving pokemon info
-* [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) - Swagger implementation for AspNet Core
-* [xUnit](https://github.com/xunit/xunit) - Tests framework
+* [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) - A Swagger implementation for AspNet Core
+* [xUnit](https://github.com/xunit/xunit) - A test framework

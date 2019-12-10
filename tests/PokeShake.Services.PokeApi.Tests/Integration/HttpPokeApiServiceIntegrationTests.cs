@@ -65,7 +65,7 @@ namespace PokeShake.Services.PokeApi.Tests.Integration
             // Assert
             pokemon.Should().NotBeNull("Result pokemon should have a value");
             pokemon.Name.Should().Be(name, "Provided name and result name should be the same");
-            pokemon.FormDescriptions.Any().Should().BeTrue("There should be at least one description");
+            pokemon.FlavorTextEntries.Any().Should().BeTrue("There should be at least one description");
         }
 
         /// <summary>
