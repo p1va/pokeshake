@@ -122,10 +122,18 @@ Move into the newly created directory containing the repository
 cd  pokeshake
 ```
 
-Build a docker image containing the web api app
+Build a docker image containing the web api app.
+
+For Windows:
+
+```
+docker build -f src\PokeShake.WebApi\Dockerfile -t pokeshakeapi .\.\.
+```
+
+For Unix:
 
 ```sh
-docker build -f src/PokeShake.WebApi/Dockerfile -t pokeshakeapi ...
+docker build -f src/PokeShake.WebApi/Dockerfile -t pokeshakeapi ././.
 ```
 
 Double check the outcome of the command by looking at the list of images.
