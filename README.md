@@ -112,15 +112,21 @@ In addition you can visually test the API by browsing to [http://localhost:5000/
 
 ## Test 🔮
 
-Explain how to run the automated tests for this system
+Starting at the root directory of the git repository (the one where `PokeShake.sln` file is located)
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+Restore nuget packages with the following command.
 
 ```sh
-Give an example
+dotnet restore
 ```
+
+And then run the tests
+
+```sh
+dotnet test
+```
+
+> Note that Web API integration tests use port 9999 so tests could fail if that port is already in use. If this is the case just change the port in the `WebApiIntegrationTests` class
 
 ## Built With 👨🏻‍💻
 * [.NET Core 3.1](https://dotnet.microsoft.com/download) - Development framework
@@ -135,6 +141,7 @@ Give an example
 * [Ensure.That](https://github.com/danielwertheim/Ensure.That) - A guard clause library
 * [FluentAssertions](https://fluentassertions.com/) - An extension methods libraries for tests assertions
 * [FunTranslations API](https://funtranslations.com/api/shakespeare) - An API for unusual text translations
+* [Moq4](https://github.com/Moq/moq4) - A mocking library for easier testing
 * [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) - A JSON serialization/deserialization library
 * [PokeAPI](https://pokeapi.co) - An API for retrieving pokemon info
 * [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) - A Swagger implementation for AspNet Core
