@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{80C8AA38-B6E7-4916-A047-98FB4C3650AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.WebApi", "src\PokeShake.WebApi\PokeShake.WebApi.csproj", "{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Dto", "src\PokeShake.DTO\PokeShake.Dto.csproj", "{7F02C8A6-96A8-40AF-ACC2-2788DF890565}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Tests", "tests\PokeShake.Tests\PokeShake.Tests.csproj", "{0F58375E-5660-4154-A382-4845A1EF5585}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.PokeApi", "src\PokeShake.Services.PokeApi\PokeShake.Services.PokeApi.csproj", "{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.Common", "src\PokeShake.Services.Common\PokeShake.Services.Common.csproj", "{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.PokeApi.Tests", "tests\PokeShake.Services.PokeApi.Tests\PokeShake.Services.PokeApi.Tests.csproj", "{4E01511D-4657-45C6-B625-1A670449F58B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.FunTranslations", "src\PokeShake.Services.FunTranslations\PokeShake.Services.FunTranslations.csproj", "{F10F3FEE-7764-4B56-974A-E0813329404E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.FunTranslations.Tests", "tests\PokeShake.Services.FunTranslations.Tests\PokeShake.Services.FunTranslations.Tests.csproj", "{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.PokemonShakespeareanDescription", "src\PokeShake.Services.PokemonShakespeareanDescription\PokeShake.Services.PokemonShakespeareanDescription.csproj", "{CC6A9DDD-48E0-4748-A45D-BA26C99F0BBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Services.PokemonShakespeareanDescription.Tests", "tests\PokeShake.Services.PokemonShakespeareanDescription.Tests\PokeShake.Services.PokemonShakespeareanDescription.Tests.csproj", "{8C950562-D1D0-40DB-B751-6CA29771E83C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeShake.WebApi.Tests", "tests\PokeShake.WebApi.Tests\PokeShake.WebApi.Tests.csproj", "{3C794128-5009-4172-81FF-FBBE189DCE4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F58375E-5660-4154-A382-4845A1EF5585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F58375E-5660-4154-A382-4845A1EF5585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F58375E-5660-4154-A382-4845A1EF5585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F58375E-5660-4154-A382-4845A1EF5585}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EBB6A3-8160-4EEC-8113-3049034EAE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E01511D-4657-45C6-B625-1A670449F58B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E01511D-4657-45C6-B625-1A670449F58B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E01511D-4657-45C6-B625-1A670449F58B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E01511D-4657-45C6-B625-1A670449F58B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10F3FEE-7764-4B56-974A-E0813329404E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10F3FEE-7764-4B56-974A-E0813329404E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10F3FEE-7764-4B56-974A-E0813329404E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10F3FEE-7764-4B56-974A-E0813329404E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC6A9DDD-48E0-4748-A45D-BA26C99F0BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC6A9DDD-48E0-4748-A45D-BA26C99F0BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC6A9DDD-48E0-4748-A45D-BA26C99F0BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC6A9DDD-48E0-4748-A45D-BA26C99F0BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C950562-D1D0-40DB-B751-6CA29771E83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C950562-D1D0-40DB-B751-6CA29771E83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C950562-D1D0-40DB-B751-6CA29771E83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C950562-D1D0-40DB-B751-6CA29771E83C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C794128-5009-4172-81FF-FBBE189DCE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C794128-5009-4172-81FF-FBBE189DCE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C794128-5009-4172-81FF-FBBE189DCE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C794128-5009-4172-81FF-FBBE189DCE4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
+		{7F02C8A6-96A8-40AF-ACC2-2788DF890565} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
+		{0F58375E-5660-4154-A382-4845A1EF5585} = {80C8AA38-B6E7-4916-A047-98FB4C3650AF}
+		{D7EBB6A3-8160-4EEC-8113-3049034EAE5F} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
+		{3EC08ADE-7047-4EAF-9FD0-71B0208AA7F7} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
+		{4E01511D-4657-45C6-B625-1A670449F58B} = {80C8AA38-B6E7-4916-A047-98FB4C3650AF}
+		{F10F3FEE-7764-4B56-974A-E0813329404E} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
+		{E1E711BE-5705-4E61-B215-B4F9AC86B5C9} = {80C8AA38-B6E7-4916-A047-98FB4C3650AF}
+		{CC6A9DDD-48E0-4748-A45D-BA26C99F0BBF} = {67A5781E-FF92-4444-AE7D-7CFF9A0AAAD5}
+		{8C950562-D1D0-40DB-B751-6CA29771E83C} = {80C8AA38-B6E7-4916-A047-98FB4C3650AF}
+		{3C794128-5009-4172-81FF-FBBE189DCE4D} = {80C8AA38-B6E7-4916-A047-98FB4C3650AF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5BF3CB7-81DD-40DC-AA17-C180FEC0E866}
+	EndGlobalSection
+EndGlobal

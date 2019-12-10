@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PokeShake.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:PokeShake.WebApi.Controllers.PokemonController">
+            <summary>
+            The pokemon controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:PokeShake.WebApi.Controllers.PokemonController.logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="F:PokeShake.WebApi.Controllers.PokemonController.service">
+            <summary>
+            The service
+            </summary>
+        </member>
+        <member name="F:PokeShake.WebApi.Controllers.PokemonController.cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
+        <member name="M:PokeShake.WebApi.Controllers.PokemonController.#ctor(Microsoft.Extensions.Logging.ILogger{PokeShake.WebApi.Controllers.PokemonController},PokeShake.Services.PokemonShakespeareanDescription.Contracts.IPokemonShakespeareanDescriptionService,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PokeShake.WebApi.Controllers.PokemonController" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="service">The service.</param>
+            <param name="cache">The cache.</param>
+        </member>
+        <member name="M:PokeShake.WebApi.Controllers.PokemonController.GetAsync(System.String)">
+            <summary>
+            Gets the shakespearean description of a pokemon given the name.
+            </summary>
+            <param name="name">The pokemon name.</param>
+            <returns>
+            Returns the specified pokemon shakespearean description
+            </returns>
+            <remarks>
+            Sample request:
+            
+                GET /pokemon/charizard
+                {
+                    "name": "charizard",
+                    "description": "Charizard flies 'round the sky in search of powerful opponents. 't breathes fire of such most wondrous heat yond 't melts aught. However,  't nev'r turns its fiery breath on any opponent weaker than itself."
+                }
+            </remarks>
+            <response code="200">Returns the specified pokemon shakespearean description</response>
+            <response code="400">If the request arguments are not correct</response>
+            <response code="404">If the specified pokemon was not found</response>
+            <response code="500">If something went wrong</response>
+        </member>
+        <member name="M:PokeShake.WebApi.Controllers.PokemonController.GetCacheKey(System.String)">
+            <summary>
+            Gets the cache key.
+            </summary>
+            <param name="pokemonName">Name of the pokemon.</param>
+            <returns>The cache key.</returns>
+        </member>
+        <member name="T:PokeShake.WebApi.Program">
+            <summary>
+            The program class
+            </summary>
+        </member>
+        <member name="M:PokeShake.WebApi.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:PokeShake.WebApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:PokeShake.WebApi.Schemas.AppSwaggerGenOptionsExtension">
+            <summary>
+            The app swagger gen options extension class
+            </summary>
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.AppSwaggerGenOptionsExtension.AddAppSchemaFilters(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <summary>
+            Adds the application specific schema filters to the swagger options.
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.Schemas.GetPokemonResponseSchemaFilter">
+            <summary>
+            The get pokemon response schema filter
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.ISchemaFilter" />
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.GetPokemonResponseSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)">
+            <summary>
+            Applies the specified schema.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.Schemas.InternalServerErrorResponseSchemaFilter">
+            <summary>
+            The internal server error response schema filter
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.ISchemaFilter" />
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.InternalServerErrorResponseSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)">
+            <summary>
+            Applies the specified schema.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.Schemas.PokemonBadRequestErrorResponseSchemaFilter">
+            <summary>
+            The pokemon bad request error response schema filter
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.ISchemaFilter" />
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.PokemonBadRequestErrorResponseSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)">
+            <summary>
+            Applies the specified schema.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.Schemas.PokemonNotFoundErrorResponseSchemaFilter">
+            <summary>
+            The pokemon not found error response schema filter
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.ISchemaFilter" />
+        </member>
+        <member name="M:PokeShake.WebApi.Schemas.PokemonNotFoundErrorResponseSchemaFilter.Apply(Microsoft.OpenApi.Models.OpenApiSchema,Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext)">
+            <summary>
+            Applies the specified schema.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.Startup">
+            <summary>
+            The startup class
+            </summary>
+        </member>
+        <member name="M:PokeShake.WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PokeShake.WebApi.Startup"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="P:PokeShake.WebApi.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="M:PokeShake.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services.
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:PokeShake.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures the specified application.
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+        <member name="T:PokeShake.WebApi.WebApiLoggingEvents">
+            <summary>
+            The Web API logging events class
+            </summary>
+        </member>
+        <member name="F:PokeShake.WebApi.WebApiLoggingEvents.GetPokemonShakespeareanDescr">
+            <summary>
+            The get pokemon shakespearean description
+            </summary>
+        </member>
+        <member name="F:PokeShake.WebApi.WebApiLoggingEvents.AnotherRequest">
+            <summary>
+            Another request
+            </summary>
+        </member>
+        <member name="F:PokeShake.WebApi.WebApiLoggingEvents.PokemonNotFound">
+            <summary>
+            The pokemon not found
+            </summary>
+        </member>
+        <member name="F:PokeShake.WebApi.WebApiLoggingEvents.InvalidPokemonName">
+            <summary>
+            The invalid pokemon name
+            </summary>
+        </member>
+    </members>
+</doc>

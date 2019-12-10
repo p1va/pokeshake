@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "PokeShake.Services.PokeApi.Tests": {
+      "commandName": "Project"
+    }
+  }
+}
