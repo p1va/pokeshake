@@ -10,7 +10,7 @@ EXPOSE 80
 # Starting from the SDK image
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["src/PokeShake.DTO/PokeShake.Dto.csproj", "src/PokeShake.Dto/"]
+COPY ["src/PokeShake.Dto/PokeShake.Dto.csproj", "src/PokeShake.Dto/"]
 COPY ["src/PokeShake.Services.Common/PokeShake.Services.Common.csproj", "src/PokeShake.Services.Common/"]
 COPY ["src/PokeShake.Services.FunTranslations/PokeShake.Services.FunTranslations.csproj", "src/PokeShake.Services.FunTranslations/"]
 COPY ["src/PokeShake.Services.PokeApi/PokeShake.Services.PokeApi.csproj", "src/PokeShake.Services.PokeApi/"]
