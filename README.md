@@ -45,6 +45,69 @@ docker --version
 #Docker version 19.03.4, build 9013bf5
 ```
 
+### Repository structure
+
+<details>
+<summary>Repository structure.</summary>
+<p>
+
+```sh
+root
+│   README.md
+│   PokeShake.sln    
+│
+└───art
+│   
+└───src
+│   │
+│   └───PokeShake.DTO # Data transportation objects library
+│   │
+│   └───PokeShake.Services.Common # Common logic to all the services
+│   │
+│   └───PokeShake.Services.FunTranslations # FunTranslation service impl.
+│   │
+│   └───PokeShake.Services.PokeApi # PokeApi service impl.
+│   │
+│   └───PokeShake.Services.PokemonShakespeareanDescription # Shakespearean desc. impl.
+│   │
+│   └───PokeShake.PokeShake.WebApi # Web Api
+│
+└───tests
+    │
+    └───PokeShake.Tests # Misc test project
+    │   │
+    │   └─Integration
+    │   │
+    │   └─Unit
+    │
+    └───PokeShake.Services.FunTranslations.Tests # FunTranslations tests
+    │   │
+    │   └─Integration
+    │   │
+    │   └─Unit
+    │
+    └───PokeShake.Services.PokeApi.Tests # PokeApi tests
+    │   │
+    │   └─Integration
+    │   │
+    │   └─Unit
+    │
+    └───PokeShake.Services.PokemonShakespeareanDescription.Tests # Shakespearean desc tests
+    │   │
+    │   └─Integration
+    │   │
+    │   └─Unit
+    │
+    └───PokeShake.WebAPi.Tests # Web API tests
+        │
+        └─Integration
+        │
+        └─Unit
+
+```
+</p>
+</details> 
+
 ## Build  🔨 
 
 Clone the master branch of this repository into your local system
