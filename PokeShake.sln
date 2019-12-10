@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{80C8AA38
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.WebApi", "src\PokeShake.WebApi\PokeShake.WebApi.csproj", "{A34E629E-2AD5-4BF0-A23F-A55A06E77AA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Dto", "src\PokeShake.DTO\PokeShake.Dto.csproj", "{7F02C8A6-96A8-40AF-ACC2-2788DF890565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Dto", "src\PokeShake.Dto\PokeShake.Dto.csproj", "{7F02C8A6-96A8-40AF-ACC2-2788DF890565}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeShake.Tests", "tests\PokeShake.Tests\PokeShake.Tests.csproj", "{0F58375E-5660-4154-A382-4845A1EF5585}"
 EndProject
