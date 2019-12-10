@@ -23,8 +23,8 @@ $ curl http://localhost:5000/pokemon/charizard
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 In order to build, test and run this project the following dependencies need to be fulfilled:
-* **Docker**
-* **.NET Core SDK 3.1.0**
+* **Docker** - [Download](https://www.docker.com/)
+* **.NET Core SDK 3.1.0** - [Download](https://dotnet.microsoft.com/download)
 
 This document also assumes that `git`, `dotnet` and `docker` are part of your `PATH` so that they are considered valid commands when entered in a shell. 
 
